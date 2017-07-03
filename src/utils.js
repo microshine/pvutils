@@ -27,7 +27,7 @@ export function getParametersValue(parameters, name, defaultValue)
 }
 //**************************************************************************************
 /**
- * Converts "ArrayBuffer" into a hexdecimal string
+ * Converts "ArrayBuffer" into a hexadecimal string
  * @param {ArrayBuffer} inputBuffer
  * @param {number} [inputOffset=0]
  * @param {number} [inputLength=inputBuffer.byteLength]
@@ -340,7 +340,7 @@ export function isEqualBuffer(inputBuffer1, inputBuffer2)
 }
 //**************************************************************************************
 /**
- * Pad input number with leade "0" if needed
+ * Pad input number with leaded "0" if needed
  * @returns {string}
  * @param {number} inputNumber
  * @param {number} fullLength
