@@ -15,13 +15,14 @@
   },
   "description": "Common utilities for products from Peculiar Ventures",
   "scripts": {
-    "install": "npm run build",
-    "build": "babel src --compact=false --out-dir build --source-maps",
+    "prepare": "npm run build",
+    "build": "babel src --compact=false --out-dir build",
+    "build:source": "babel src --compact=false --out-dir build --source-maps",
     "watch": "babel src --compact=false --out-dir build --source-maps --watch"
   },
   "jsnext:main": "./src/utils.js",
   "main": "./build/utils.js",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "latest",
     "babel-preset-es2015": "latest"
   },
