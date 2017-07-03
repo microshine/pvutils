@@ -15,7 +15,7 @@
   },
   "description": "Common utilities for products from Peculiar Ventures",
   "scripts": {
-    "prepare": "npm run build",
+    "prepare": "echo \"PREPARE\n\" && npm run build",
     "build": "babel src --compact=false --out-dir build",
     "build:source": "babel src --compact=false --out-dir build --source-maps",
     "watch": "babel src --compact=false --out-dir build --source-maps --watch"
