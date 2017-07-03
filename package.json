@@ -30,6 +30,7 @@
     "@types/node": "^6.0.79",
     "babel-cli": "latest",
     "babel-preset-es2015": "latest",
+    "coveralls": "^2.13.1",
     "mocha": "^3.4.2",
     "nyc": "^11.0.3"
   },
