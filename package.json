@@ -18,13 +18,20 @@
     "prepare": "npm run build",
     "build": "babel src --compact=false --out-dir build",
     "build:source": "babel src --compact=false --out-dir build --source-maps",
-    "watch": "babel src --compact=false --out-dir build --source-maps --watch"
+    "watch": "babel src --compact=false --out-dir build --source-maps --watch",
+    "test": "mocha test",
+    "coverage": "npm run build:source && nyc npm test",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "jsnext:main": "./src/utils.js",
   "main": "./build/utils.js",
   "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^6.0.79",
     "babel-cli": "latest",
-    "babel-preset-es2015": "latest"
+    "babel-preset-es2015": "latest",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
   },
   "name": "pvutils",
   "version": "1.0.8",
