@@ -443,7 +443,7 @@ export function toBase64(input, useUrlTemplate = false, skipPadding = false, ski
  * Decode string from BASE64 (or "base64url")
  * @param {string} input
  * @param {boolean} [useUrlTemplate=false] If "true" then output would be encoded using "base64url"
- * @param {boolean} [cutTailZeros=false] If "true" then cut tailing zeroz from function result
+ * @param {boolean} [cutTailZeros=false] If "true" then cut tailing zeros from function result
  * @returns {string}
  */
 export function fromBase64(input, useUrlTemplate = false, cutTailZeros = false)
@@ -451,7 +451,7 @@ export function fromBase64(input, useUrlTemplate = false, cutTailZeros = false)
 	const template = (useUrlTemplate) ? base64UrlTemplate : base64Template;
 	
 	//region Aux functions
-	function indexof(toSearch)
+	function indexOf(toSearch)
 	{
 		for(let i = 0; i < 64; i++)
 		{
@@ -474,10 +474,10 @@ export function fromBase64(input, useUrlTemplate = false, cutTailZeros = false)
 	
 	while(i < input.length)
 	{
-		const enc1 = indexof(input.charAt(i++));
-		const enc2 = (i >= input.length) ? 0x00 : indexof(input.charAt(i++));
-		const enc3 = (i >= input.length) ? 0x00 : indexof(input.charAt(i++));
-		const enc4 = (i >= input.length) ? 0x00 : indexof(input.charAt(i++));
+		const enc1 = indexOf(input.charAt(i++));
+		const enc2 = (i >= input.length) ? 0x00 : indexOf(input.charAt(i++));
+		const enc3 = (i >= input.length) ? 0x00 : indexOf(input.charAt(i++));
+		const enc4 = (i >= input.length) ? 0x00 : indexOf(input.charAt(i++));
 		
 		const chr1 = (test(enc1) << 2) | (test(enc2) >> 4);
 		const chr2 = ((test(enc2) & 0x0F) << 4) | (test(enc3) >> 2);
