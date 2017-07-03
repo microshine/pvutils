@@ -1,3 +1,9 @@
 machine:
   node:
     version: 6.9.1
+
+test:
+  override:
+    - npm run coverage
+  post:
+    - npm run coveralls
