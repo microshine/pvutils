@@ -30,10 +30,10 @@ export function getParametersValue(parameters, name, defaultValue)
  * Converts "ArrayBuffer" into a hexadecimal string
  * @param {ArrayBuffer} inputBuffer
  * @param {number} [inputOffset=0]
- * @param {number} [inputLength=inputBuffer.byteLength]
+ * @param {number} [inputLength=inputBuffer.byteLength-inputOffset]
  * @returns {string}
  */
-export function bufferToHexCodes(inputBuffer, inputOffset = 0, inputLength = inputBuffer.byteLength)
+export function bufferToHexCodes(inputBuffer, inputOffset = 0, inputLength = inputBuffer.byteLength - inputOffset)
 {
 	let result = "";
 	
