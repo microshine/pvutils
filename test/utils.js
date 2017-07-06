@@ -16,6 +16,12 @@ context("pvutils", () => {
             assert.equal(utils.getParametersValue(params, "name", "def"), "Test");
         });
 
+        it("empty parameter", () => {
+            const params = null;
+
+            assert.equal(utils.getParametersValue(params, "name", "def"), "def");
+        });
+
         it("default value", () => {
             const params = {
             };
@@ -28,16 +34,16 @@ context("pvutils", () => {
     context("bufferToHexCodes", () => {
 
         it("default values", () => {
-            const buffer = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]).buffer;
-            const test = "01020304050607080900";
+            const buffer = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 255]).buffer;
+            const test = "01020304050607080900FF";
             const hex = utils.bufferToHexCodes(buffer);
 
             assert.equal(hex, test);
         });
 
         it("offset", () => {
-            const buffer = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]).buffer;
-            const test = "020304050607080900";
+            const buffer = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 255]).buffer;
+            const test = "020304050607080900FF";
             const hex = utils.bufferToHexCodes(buffer, 1);
 
             assert.equal(hex, test);
